@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cyber Security Malware Awareness</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* GENERAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Poppins;
+background:#050b17;
+color:#e8f0ff;
+line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(90deg,#020409,#0f2027);
+padding:70px 20px;
+text-align:center;
+border-bottom:2px solid #00eaff;
+}
+
+header h1{
+font-family:Orbitron;
+font-size:48px;
+color:#00eaff;
+text-shadow:0 0 15px #00eaff;
+}
+
+header p{
+margin-top:10px;
+font-size:18px;
+color:#9ccfff;
+}
+
+/* NAVBAR */
+
+nav{
+background:#0a1324;
+position:sticky;
+top:0;
+z-index:100;
+border-bottom:1px solid #00eaff33;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+padding:15px;
+}
+
+nav li{
+margin:0 25px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#00eaff;
+text-shadow:0 0 10px #00eaff;
+}
+
+/* MAIN */
+
+main{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+section{
+background:#0b1324;
+padding:35px;
+margin-bottom:40px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,234,255,0.07);
+}
+
+h2{
+font-family:Orbitron;
+color:#00eaff;
+margin-bottom:15px;
+border-bottom:2px solid #00eaff;
+display:inline-block;
+padding-bottom:5px;
+}
+
+/* CARDS */
+
+.malware-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:20px;
+}
+
+.card{
+background:#050b18;
+padding:25px;
+border-radius:10px;
+border:1px solid #00eaff33;
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 20px #00eaff66;
+}
+
+.card h3{
+font-family:Orbitron;
+color:#ff4b5c;
+margin-bottom:10px;
+}
+
+.details{
+display:none;
+font-size:14px;
+color:#c9dbff;
+}
+
+/* PREVENTION LIST */
+
+.prevention-list{
+list-style:none;
+margin-top:15px;
+}
+
+.prevention-list li{
+background:#050b18;
+padding:15px;
+border-left:4px solid #00ff9c;
+margin-bottom:12px;
+border-radius:6px;
+}
+
+/* CONTACT FORM */
+
+form{
+margin-top:20px;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin-bottom:12px;
+border:none;
+border-radius:6px;
+background:#0f1a33;
+color:white;
+}
+
+button{
+padding:12px 25px;
+background:#00eaff;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#00c3d9;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:25px;
+background:#020409;
+border-top:1px solid #00eaff33;
+color:#aaa;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Cyber Security Awareness</h1>
+<p>Understanding Malware & Protecting Your Digital Life</p>
+
+</header>
+
+<nav>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#malware">Malware Types</a></li>
+<li><a href="#prevention">Prevention</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<main>
+
+<section id="about">
+
+<h2>What is Malware?</h2>
+
+<p>
+Malware is malicious software created by cybercriminals to damage computers,
+steal data, or gain unauthorized access to networks. Malware can infect devices
+through downloads, infected websites, phishing emails, or vulnerable systems.
+</p>
+
+</section>
+
+<section id="malware">
+
+<h2>Types of Malware</h2>
+
+<div class="malware-grid">
+
+<div class="card" onclick="toggle('virus')">
+<h3>Virus</h3>
+<div id="virus" class="details">
+A virus attaches itself to programs and spreads when executed, damaging files or systems.
+</div>
+</div>
+
+<div class="card" onclick="toggle('worm')">
+<h3>Worm</h3>
+<div id="worm" class="details">
+Self-replicating malware that spreads through networks without user interaction.
+</div>
+</div>
+
+<div class="card" onclick="toggle('trojan')">
+<h3>Trojan</h3>
+<div id="trojan" class="details">
+Disguised as legitimate software but secretly allows attackers to access systems.
+</div>
+</div>
+
+<div class="card" onclick="toggle('ransomware')">
+<h3>Ransomware</h3>
+<div id="ransomware" class="details">
+Encrypts files and demands money for the decryption key.
+</div>
+</div>
+
+<div class="card" onclick="toggle('spyware')">
+<h3>Spyware</h3>
+<div id="spyware" class="details">
+Secretly monitors user activity and collects personal information.
+</div>
+</div>
+
+<div class="card" onclick="toggle('adware')">
+<h3>Adware</h3>
+<div id="adware" class="details">
+Displays unwanted advertisements and may track user behaviour.
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="prevention">
+
+<h2>How to Prevent Malware</h2>
+
+<ul class="prevention-list">
+
+<li><b>Use Antivirus Software</b> to detect and remove threats.</li>
+
+<li><b>Update Operating Systems</b> regularly to fix security vulnerabilities.</li>
+
+<li><b>Avoid Suspicious Links</b> in emails or websites.</li>
+
+<li><b>Use Strong Passwords</b> and enable two-factor authentication.</li>
+
+<li><b>Backup Important Files</b> to protect against ransomware.</li>
+
+</ul>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact / Feedback</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea rows="4" placeholder="Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>© 2026 Cyber Security Awareness Project</p>
+
+</footer>
+
+<script>
+
+function toggle(id){
+
+const details=document.getElementById(id);
+
+if(details.style.display==="block"){
+details.style.display="none";
+}
+
+else{
+
+document.querySelectorAll(".details").forEach(d=>{
+d.style.display="none";
+});
+
+details.style.display="block";
+
+}
+
+}
+
+document.querySelectorAll("nav a").forEach(link=>{
+
+link.addEventListener("click",function(e){
+
+e.preventDefault();
+
+const id=this.getAttribute("href").substring(1);
+
+window.scrollTo({
+top:document.getElementById(id).offsetTop-60,
+behavior:"smooth"
+});
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
